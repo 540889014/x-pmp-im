@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.osdoctor.orm.medicineshop.MedicineNotice" table="shop_medicineNotice">
+        <id name="id" type="integer">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+      <property name="title" type="string">
+      	<column name="name"/>
+      </property>
+      <property name="noticeImg" type="string">
+      	<column name="noticeImg"/>
+      </property>
+      <property name="type" type="string">
+      	<column name="type"></column>
+      </property>
+      <property name="infoId" type="string">
+      	<column name="infoId"></column>
+      </property>
+  	<property name="content" type="string">
+  		<column name="content"/>
+  	</property>
+      <property name="postion" type="int">
+      	<column name="postion"/>
+      </property>
+      <property name="view" type="boolean">
+      	<column name="view"></column>
+      </property>
+    </class>
+</hibernate-mapping>

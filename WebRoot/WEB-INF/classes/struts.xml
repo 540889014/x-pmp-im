@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<include file="struts_client.xml"></include>
+	<include file="struts_client_patientApp.xml"></include>
+	<!-- 配置为开发模式 -->
+    <constant name="struts.devMode" value="true" />
+	<!-- 配置扩展名为action -->
+    <constant name="struts.action.extension" value="action" />
+   <constant name="struts.locale" value="zh_CN" />
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+	 <constant name="struts.multipart.maxSize" value="1048576000"/>
+	 <constant name="struts.custom.i18n.resources" value="globalMessages"/> 
+
+
+
+    <package name="main" namespace="/main" extends="struts-default,json-default">
+	    <!--页面Action  -->
+	    <action name="index_*" class="com.osdoctor.action.IndexAction" method="{1}">
+		<result name="top">/WEB-INF/page/index/top.jsp</result>
+		<result name="right">/WEB-INF/page/index/index.jsp</result>
+		<result name="left">/WEB-INF/page/index/left.jsp</result>
+		<result name="main">/WEB-INF/page/index/main.jsp</result>
+		</action>
+		
+		<!--商城  -->
+		<action name="MedicineNotice_*" class="com.osdoctor.action.medicineshop.Manager_MedicineNoticeAction" method="{1}">
+		<result name="list">/WEB-INF/page/shangCheng/GongGao/shangChengGuangGao.jsp</result>
+		<result name="addar">/WEB-INF/page/shangCheng/GongGao/shangChengGuangGaoAdd.jsp</result>
+		<result name="updatear">/WEB-INF/page/shangCheng/GongGao/shangChengGuangGaoUpdate.jsp</result>
+		<result name="update" type="redirectAction">MedicineNotice_list</result>
+		<result name="add" type="redirectAction">MedicineNotice_list</result>
+		<result name="delete" type="redirectAction">MedicineNotice_list</result>
+		</action>
+		
+		<!--一级分类  -->
+		<action name="MedicineLevel_*" class="com.osdoctor.action.medicineshop.Manager_MedicineLevelAction" method="{1}">
+		<result name="levellist">/WEB-INF/page/shangCheng/YiYaoFenLei/shangChengFenLeiSheZhi.jsp</result>
+		<result name="leveladdar">/WEB-INF/page/shangCheng/YiYaoFenLei/shangChengFenLeiAdd.jsp</result>
+		<result name="levelupdatear">/WEB-INF/page/shangCheng/YiYaoFenLei/shangChengFenLeiUpdate.jsp</result>
+		<result name="levelupdate" type="redirectAction">MedicineLevel_levellist</result>
+		<result name="leveladd" type="redirectAction">MedicineLevel_levellist</result>
+		<result name="leveldelete" type="redirectAction">MedicineLevel_levellist</result>
+		<!--二级分类  -->
+		<result name="erjilist">/WEB-INF/page/shangCheng/YiYaoFenLei/shangChengFenLeiErJi.jsp</result>
+		<result name="erjiaddar">/WEB-INF/page/shangCheng/YiYaoFenLei/shangChengFenLeiErJiAdd.jsp</result>
+		<result name="erjiupdatear">/WEB-INF/page/shangCheng/YiYaoFenLei/shangChengFenLeiErJiUpdate.jsp</result>
+		<result name="erjiupdate" type="redirectAction">MedicineLevel_erjilist?id=${id}</result>
+		<result name="erjiadd" type="redirectAction">MedicineLevel_erjilist?id=${id}</result>
+		<result name="erjidelete" type="redirectAction">MedicineLevel_erjilist?id=${id}</result>
+		</action>
+		
+		<!--医药  -->
+		<action name="MedicineInfo_*" class="com.osdoctor.action.medicineshop.Manager_MedicineInfoAction" method="{1}">
+		<result name="list">/WEB-INF/page/shangCheng/shangChengJianShe/shangChengYiYao.jsp</result>
+		<result name="addar">/WEB-INF/page/shangCheng/shangChengJianShe/shangChengYiYaoAdd.jsp</result>
+		<result name="updatear">/WEB-INF/page/shangCheng/shangChengJianShe/shangChengYiYaoUpdate.jsp</result>
+		<result name="detail">/WEB-INF/page/shangCheng/shangChengJianShe/shangChengYiYaoDetail.jsp</result>
+		<result name="update" type="redirectAction">MedicineInfo_list</result>
+		<result name="add" type="redirectAction">MedicineInfo_list</result>
+		<result name="delete" type="redirectAction">MedicineInfo_list</result>
+		</action>
+		<!--每日推荐  -->
+		<action name="MedicineDayRecommen_*" class="com.osdoctor.action.medicineshop.Manager_MedicineDayRecommendAction" method="{1}">
+		<result name="list">/WEB-INF/page/shangCheng/dayTuiJian/tuijian.jsp</result>
+		<result name="addar">/WEB-INF/page/shangCheng/dayTuiJian/tuiJianAdd.jsp</result>
+		<result name="updatear">/WEB-INF/page/shangCheng/dayTuiJian/tuiJianUpdate.jsp</result>
+		<result name="add" type="redirectAction">MedicineDayRecommen_list</result>
+		<result name="delete" type="redirectAction">MedicineDayRecommen_list</result>
+			<result name="update" type="redirectAction">MedicineDayRecommen_list</result>
+		</action>
+     </package>	
+</struts>

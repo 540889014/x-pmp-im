@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.osdoctor.orm.topicpatient.PatientTopic" table="patient_topic">
+        <id name="id" type="integer">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+      <property name="title" type="string">
+      	<column name="title"/>
+      </property>
+      <property name="content" type="text">
+      	<column name="content"></column>
+      </property>
+      <property name="fabiaoTime" type="timestamp">
+      	<column name="fabiaoTime"></column>
+      </property>
+      <property name="patientReplyCount" type="int">
+      	<column name="patientReplyCount"></column>
+      </property>
+      <property name="praiseCount" type="integer">
+      	<column name="praiseCount"></column>
+      </property>
+      <property name="praiseId" type="text">
+      </property>
+      <property name="views" type="boolean">
+      	<column name="views"></column>
+      </property>
+      <property name="lastUpdateTime" type="date">
+      	<column name="lastUpdateTime"></column>
+      </property>
+      <property name="patientTopicType" type="int">
+      	<column name="patientTopicType"></column>
+      </property>
+      <many-to-one name="author" class="com.osdoctor.orm.osOperaor.OsPatient">
+      	<column name="author"></column>
+      </many-to-one>
+      <many-to-one name="lastPatReply" class="com.osdoctor.orm.topicpatient.PatientReply">
+      	<column name="lastPatReply"></column>
+      </many-to-one>
+      <set name="patientReplies">
+      	<key column="patientTopicId"></key>
+      	<one-to-many class="com.osdoctor.orm.topicpatient.PatientReply"/>
+      </set>
+       <many-to-one name="patientSection" class="com.osdoctor.orm.topicpatient.PatientSection">
+      	<column name="patientSectionId"></column>
+      </many-to-one>
+      <set name="patientLabels" table="topicLabel_PatientTopic">
+      	<key column="patientTopicId"></key>
+      	<many-to-many class="com.osdoctor.orm.topicCommon.TopicLabel"  column="topicLabelId"/>
+      </set>
+    </class>
+</hibernate-mapping>

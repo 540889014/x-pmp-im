@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.osdoctor.orm.medicineshop.MedicineInfo" table="shop_medicineInfo">
+        <id name="id" type="integer">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+      <property name="name" type="string">
+      	<column name="name"/>
+      </property>
+      <property name="notice" type="string">
+      	<column name="notice"/>
+      </property>
+  	<property name="medicineId" type="string">
+  		<column name="medicineId"/>
+  	</property>
+      
+      <property name="medicinePrice" type="float">
+      	<column name="medicinePrice"/>
+      </property>
+      <property name="medicineNewPrice" type="float">
+      	<column name="medicineNewPrice"></column>
+      </property>
+      <property name="attending" type="string">
+      	<column name="attending"></column>
+      </property>
+      <property name="commonName" type="string">
+      	<column name="commonName"></column>
+      </property>
+      <property name="indication" type="string">
+      	<column name="indication"></column>
+      </property>
+      <property name="manufacturer" type="string">
+      	<column name="manufacturer"></column>
+      </property>
+      <property name="medicineWord" type="string">
+      	<column name="medicineWord"></column>
+      </property>
+      <property name="standard" type="string">
+      	<column name="standard"></column>
+      </property>
+      <property name="pharmacy" type="string">
+      	<column name="pharmacy"></column>
+      </property>
+      <property name="usageAndDosage" type="string">
+      	<column name="usageAndDosage"></column>
+      </property>
+        <many-to-one name="medicineLevel" class="com.osdoctor.orm.medicineshop.MedicineLevel">
+        	<column name="medicineLevelId"/>
+        </many-to-one>
+    <many-to-one name="medicineDetail" class="com.osdoctor.orm.medicineshop.MedicineDetail">
+        	<column name="medicineDetailId"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

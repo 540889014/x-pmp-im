@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.osdoctor.orm.topiccontrol.DoctorOrPatientReply" table="control_topicreply">
+        <id name="id" type="integer">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="title" type="string">
+        	<column name="title"></column>
+        </property>
+        <property name="content" type="text">
+        	<column name="content"></column>
+        </property>
+        <property name="fabiaoTime" type="timestamp">
+        	<column name="fabiaoTime"></column>
+        </property>
+        <property name="views" type="boolean">
+        	<column name="views"></column>
+        </property>
+        <many-to-one name="doctor" class="com.osdoctor.orm.osOperaor.OsDoctor">
+        	<column name="doctorId"></column>
+        </many-to-one>
+        <many-to-one name="patient" class="com.osdoctor.orm.osOperaor.OsPatient">
+        	<column name="patientId"></column>
+        </many-to-one>
+        <many-to-one name="controlTopic" class="com.osdoctor.orm.topiccontrol.ControlTopic">
+        	<column name="controlTopicId"></column>
+        </many-to-one>
+    </class>
+</hibernate-mapping>
