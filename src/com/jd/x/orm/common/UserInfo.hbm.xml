@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.jd.x.orm.common.UserInfo" table="x_user">
+        <id name="id" type="integer">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="pin" type="string">
+        	<column name="pin"></column>
+        </property>
+        <property name="psw" type="string">
+        	<column name="psw"></column>
+        </property>
+        <property name="nickName" type="string">
+        	<column name="nickName"></column>
+        </property>
+        <property name="sex" type="integer">
+        	<column name="sex"></column>
+        </property>
+        <property name="sign" type="string">
+        	<column name="sign"></column>
+        </property>
+
+    </class>
+</hibernate-mapping>

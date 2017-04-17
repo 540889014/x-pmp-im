@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	
+    <package name="common" namespace="common" extends="struts-default,json-default">
+		
+		<!-- 药品分类Action -->
+		<action name="userInfo_*" class="com.jd.x.action.common.UserInfoAction" method="{1}">
+			<result name="success" type="json">
+				<param name="root">userInfo</param>
+				<param name="callbackParameter">data</param>
+			</result>
+		</action>
+    </package>	
+</struts>

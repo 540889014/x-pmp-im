@@ -4,12 +4,16 @@ import java.io.File;
 import java.lang.reflect.ParameterizedType;
 
 import javax.annotation.Resource;
+
+import com.jd.x.service.common.UserInfoService;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 public abstract class BaseAction<T> extends ActionSupport implements
 		ModelDriven<T> {
 
+	@Resource
+	protected UserInfoService userInfoService;
 
 	protected T model;
 	
