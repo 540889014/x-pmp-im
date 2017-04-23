@@ -5,6 +5,7 @@ import com.jd.x.orm.common.UserInfo;
 
 public class ProjectMember {
 
+	private Integer id;
 	private UserInfo userInfo;
 	private String dutyName;//职责
 	private ProjectInfo projectInfo;
