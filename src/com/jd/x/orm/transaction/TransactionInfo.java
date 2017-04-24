@@ -12,6 +12,7 @@ public class TransactionInfo {
 	private Date end;
 	private String detail;
 	private String duty;
+	private String summary;
 	private UserInfo userInfo;
 	private ProjectInfo projectInfo;
 }

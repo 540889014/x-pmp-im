@@ -3,7 +3,7 @@ package com.jd.x.orm.common;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.jd.x.orm.transaction.FriendsInfo;
+import com.jd.x.orm.friends.FriendsInfo;
 import com.jd.x.orm.transaction.ProjectInfo;
 import com.jd.x.orm.transaction.ProjectMember;
 
