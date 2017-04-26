@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.jd.x.orm.friends.MessageInfo" table="x_message">
+        <id name="id" type="integer">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="message" type="string">
+        	<column name="message"></column>
+        </property>
+        <property name="sendDate" type="timestamp">
+        	<column name="sendDate"></column>
+        </property>
+		<many-to-one name="sendUser" class="com.jd.x.orm.common.UserInfo">
+        	<column name="sendUserId"></column>
+        </many-to-one>
+        <many-to-one name="recUser" class="com.jd.x.orm.common.UserInfo">
+        	<column name="recUserId"></column>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.jd.x.orm.friends.FriendsInfo;
+import com.jd.x.orm.friends.GroupInfo;
 import com.jd.x.orm.transaction.ProjectInfo;
 import com.jd.x.orm.transaction.ProjectMember;
 
@@ -16,7 +17,7 @@ public class UserInfo {
 	private Integer sex;//性别1男，2女
 	private String sign;//签名
 	private List<ProjectMember> projectMembers = new ArrayList<ProjectMember>();//参与的项目
-	private List<FriendsInfo> friendsInfos = new ArrayList<FriendsInfo>();//我的好友
+	private List<GroupInfo> groupInfos = new ArrayList<GroupInfo>();//我的好友
 	
 	public String getPin() {
 		return pin;
@@ -60,11 +61,10 @@ public class UserInfo {
 	public void setProjectMembers(List<ProjectMember> projectMembers) {
 		this.projectMembers = projectMembers;
 	}
-	public List<FriendsInfo> getFriendsInfos() {
-		return friendsInfos;
+	public List<GroupInfo> getGroupInfos() {
+		return groupInfos;
 	}
-	public void setFriendsInfos(List<FriendsInfo> friendsInfos) {
-		this.friendsInfos = friendsInfos;
+	public void setGroupInfos(List<GroupInfo> groupInfos) {
+		this.groupInfos = groupInfos;
 	}
-	
 }

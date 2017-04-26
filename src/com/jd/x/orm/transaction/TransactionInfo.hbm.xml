@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.jd.x.orm.transaction.TransactionInfo" table="x_transaction">
+        <id name="id" type="integer">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="string">
+        	<column name="name"></column>
+        </property>
+        <property name="detail" type="string">
+        	<column name="detail"></column>
+        </property>
+        <property name="duty" type="string">
+        	<column name="duty"></column>
+        </property>
+        <property name="summary" type="string">
+        	<column name="summary"></column>
+        </property>
+        <property name="start" type="timestamp">
+        	<column name="start"></column>
+        </property>
+        <property name="end" type="timestamp">
+        	<column name="end"></column>
+        </property>
+		<many-to-one name="userInfo" class="com.jd.x.orm.common.UserInfo">
+        	<column name="userInfoId"></column>
+        </many-to-one>
+        <many-to-one name="projectInfo" class="com.jd.x.orm.transaction.ProjectInfo">
+        	<column name="projectInfoId"></column>
+        </many-to-one>
+    </class>
+</hibernate-mapping>
