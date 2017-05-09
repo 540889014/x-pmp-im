@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.jd.x.orm.friends.GroupInfo" table="x_group">
+        <id name="id" type="integer">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="string">
+        	<column name="name"></column>
+        </property>
+        <many-to-one name="userInfo" class="com.jd.x.orm.common.UserInfo">
+        	<column name="userInfoId"></column>
+        </many-to-one>
+        <set name="friendsInfos">
+        	<key column="groupInfoId"></key>
+        	<one-to-many class="com.jd.x.orm.friends.FriendsInfo"/>
+        </set>
+    </class>
+</hibernate-mapping>

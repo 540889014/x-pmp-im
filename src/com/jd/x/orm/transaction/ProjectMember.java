@@ -10,6 +10,7 @@ public class ProjectMember {
 	private String dutyName;//职责
 	private ProjectInfo projectInfo;//项目
 	private String dutyDetail;//职责明细 
+	
 	public Integer getId() {
 		return id;
 	}

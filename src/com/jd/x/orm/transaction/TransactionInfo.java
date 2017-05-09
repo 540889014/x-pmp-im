@@ -15,6 +15,7 @@ public class TransactionInfo {
 	private String summary;//总结
 	private UserInfo userInfo;//谁的事务
 	private ProjectInfo projectInfo;//所属项目 
+
 	public Integer getId() {
 		return id;
 	}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.jd.x.orm.transaction.ProjectMember" table="x_projectMember">
+        <id name="id" type="integer">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="dutyName" type="string">
+        	<column name="dutyName"></column>
+        </property>
+        <property name="dutyDetail" type="string">
+        	<column name="dutyDetail"></column>
+        </property>
+		<many-to-one name="userInfo" class="com.jd.x.orm.common.UserInfo">
+        	<column name="userInfoId"></column>
+        </many-to-one>
+        <many-to-one name="projectInfo" class="com.jd.x.orm.transaction.ProjectInfo">
+        	<column name="projectInfoId"></column>
+        </many-to-one>
+    </class>
+</hibernate-mapping>
