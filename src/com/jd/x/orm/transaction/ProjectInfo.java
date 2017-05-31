@@ -2,25 +2,28 @@ package com.jd.x.orm.transaction;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.jd.x.orm.common.UserInfo;
 
 
 public class ProjectInfo {
 
-	private Long id;
+	private Integer id;
 	private String projectName;
 	private Date startTime;
 	private Date endTime;
 	private String type;
 	private Integer state;
 	private UserInfo userInfo;//负责人，可以分配项目成员
-	private List<ProjectMember> projectMembers = new ArrayList<ProjectMember>();//项目成员
-	public Long getId() {
+	private Set<ProjectMember> projectMembers = new HashSet<ProjectMember>();//项目成员
+
+	public Integer getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getProjectName() {
@@ -53,10 +56,11 @@ public class ProjectInfo {
 	public void setUserInfo(UserInfo userInfo) {
 		this.userInfo = userInfo;
 	}
-	public List<ProjectMember> getProjectMembers() {
+	
+	public Set<ProjectMember> getProjectMembers() {
 		return projectMembers;
 	}
-	public void setProjectMembers(List<ProjectMember> projectMembers) {
+	public void setProjectMembers(Set<ProjectMember> projectMembers) {
 		this.projectMembers = projectMembers;
 	}
 	public Integer getState() {

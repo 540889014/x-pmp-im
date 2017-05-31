@@ -13,4 +13,7 @@ public class UserInfoDaoImpl extends BaseDaoImpl<UserInfo> implements UserInfoDa
 		return (UserInfo)getSession().createQuery("from UserInfo where pin = ? and psw = ?").setString(0, userInfo.getPin()).setString(1, userInfo.getPsw()).uniqueResult();
 	}
 
+	public UserInfo getByPin(String pin) {
+		return (UserInfo)getSession().createQuery("from UserInfo where pin = ?").setString(0, pin).uniqueResult();
+	}
 }

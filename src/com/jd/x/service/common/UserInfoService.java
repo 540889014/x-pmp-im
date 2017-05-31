@@ -12,4 +12,6 @@ public interface UserInfoService extends BaseService<UserInfo>{
 	 * @return
 	 */
 	UserInfo login(UserInfo userInfo);
+	
+	UserInfo getByPin(String pin);
 }

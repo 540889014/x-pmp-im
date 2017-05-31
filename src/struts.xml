@@ -25,5 +25,16 @@
 				<param name="callbackParameter">data</param>
 			</result>
 		</action>
+		
+		<action name="project_*" class="com.jd.x.action.transaction.ProjectInfoAction" method="{1}">
+			<result name="queryProjectByPin" type="json">
+				<param name="root">projectInfos</param>
+				<param name="callbackParameter">data</param>
+			</result>
+			<result name="queryProjectById" type="json">
+				<param name="root">projectInfo</param>
+				<param name="callbackParameter">data</param>
+			</result>
+		</action>
      </package>	
 </struts>

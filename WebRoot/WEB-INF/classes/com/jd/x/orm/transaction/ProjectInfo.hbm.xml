@@ -26,7 +26,7 @@
 		<many-to-one name="userInfo" class="com.jd.x.orm.common.UserInfo">
         	<column name="userInfoId"></column>
         </many-to-one>
-        <set name="projectMembers">
+        <set name="projectMembers" lazy="false">
         	<key column="projectInfoId"></key>
         	<one-to-many class="com.jd.x.orm.transaction.ProjectMember"/>
         </set>

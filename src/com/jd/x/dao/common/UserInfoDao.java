@@ -13,4 +13,5 @@ public interface UserInfoDao extends BaseDao<UserInfo>{
 	 */
 	UserInfo login(UserInfo userInfo);
 
+	UserInfo getByPin(String pin);
 }

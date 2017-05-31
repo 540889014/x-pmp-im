@@ -1,7 +1,9 @@
 package com.jd.x.orm.common;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.jd.x.orm.friends.FriendsInfo;
 import com.jd.x.orm.friends.GroupInfo;
@@ -16,8 +18,8 @@ public class UserInfo {
 	private String nickName;//昵称 
 	private Integer sex;//性别1男，2女
 	private String sign;//签名
-	private List<ProjectMember> projectMembers = new ArrayList<ProjectMember>();//参与的项目
-	private List<GroupInfo> groupInfos = new ArrayList<GroupInfo>();//我的好友
+	private Set<ProjectMember> projectMembers = new HashSet<ProjectMember>();//参与的项目
+	private Set<GroupInfo> groupInfos = new HashSet<GroupInfo>();//我的好友
 	
 	public String getPin() {
 		return pin;
@@ -55,16 +57,17 @@ public class UserInfo {
 	public void setSign(String sign) {
 		this.sign = sign;
 	}
-	public List<ProjectMember> getProjectMembers() {
+	public Set<ProjectMember> getProjectMembers() {
 		return projectMembers;
 	}
-	public void setProjectMembers(List<ProjectMember> projectMembers) {
+	public void setProjectMembers(Set<ProjectMember> projectMembers) {
 		this.projectMembers = projectMembers;
 	}
-	public List<GroupInfo> getGroupInfos() {
+	public Set<GroupInfo> getGroupInfos() {
 		return groupInfos;
 	}
-	public void setGroupInfos(List<GroupInfo> groupInfos) {
+	public void setGroupInfos(Set<GroupInfo> groupInfos) {
 		this.groupInfos = groupInfos;
 	}
+
 }

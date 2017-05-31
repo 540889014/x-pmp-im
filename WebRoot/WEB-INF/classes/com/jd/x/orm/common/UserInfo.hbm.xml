@@ -23,9 +23,13 @@
         <property name="sign" type="string">
         	<column name="sign"></column>
         </property>
-		<set name="projectMembers">
-			<key column="userInfo_id"></key>
+		<set name="projectMembers" lazy="false">
+			<key column="userInfoId"></key>
 			<one-to-many class="com.jd.x.orm.transaction.ProjectMember"/>
+		</set>
+		<set name="groupInfos" lazy="false">
+			<key column="userInfoId"></key>
+			<one-to-many class="com.jd.x.orm.friends.GroupInfo"/>
 		</set>
     </class>
 </hibernate-mapping>

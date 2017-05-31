@@ -1,7 +1,9 @@
 package com.jd.x.orm.friends;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.jd.x.orm.common.UserInfo;
 
@@ -11,7 +13,7 @@ public class GroupInfo {
 	private String name;//分组名称
 	private UserInfo userInfo;//谁的分组
 	
-	private List<FriendsInfo> friendsInfos = new ArrayList<FriendsInfo>();//分组下的好友
+	private Set<FriendsInfo> friendsInfos = new HashSet<FriendsInfo>();//分组下的好友
 
 	public Integer getId() {
 		return id;
@@ -37,11 +39,11 @@ public class GroupInfo {
 		this.userInfo = userInfo;
 	}
 
-	public List<FriendsInfo> getFriendsInfos() {
+	public Set<FriendsInfo> getFriendsInfos() {
 		return friendsInfos;
 	}
 
-	public void setFriendsInfos(List<FriendsInfo> friendsInfos) {
+	public void setFriendsInfos(Set<FriendsInfo> friendsInfos) {
 		this.friendsInfos = friendsInfos;
 	}
 	

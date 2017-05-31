@@ -6,6 +6,7 @@ import java.lang.reflect.ParameterizedType;
 import javax.annotation.Resource;
 
 import com.jd.x.service.common.UserInfoService;
+import com.jd.x.service.transaction.ProjectInfoService;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -15,6 +16,9 @@ public abstract class BaseAction<T> extends ActionSupport implements
 	@Resource
 	protected UserInfoService userInfoService;
 
+	@Resource
+	protected ProjectInfoService projectInfoService;
+	
 	protected T model;
 	
 	

@@ -14,12 +14,16 @@ public class UserInfoServiceImpl extends BaseServiceImpl<UserInfo> implements Us
 	private UserInfoDao userInfoDao;
 
 	@Resource
-	public void setRoleDao(UserInfoDao userInfoDao) {
+	public void setUserInfoDao(UserInfoDao userInfoDao) {
 		super.setBaseDao(userInfoDao);
 		this.userInfoDao = userInfoDao;
 	}
 	public UserInfo login(UserInfo userInfo) {
 		return userInfoDao.login(userInfo);
+	}
+	
+	public UserInfo getByPin(String pin){
+		return userInfoDao.getByPin(pin);
 	}
 
 }
